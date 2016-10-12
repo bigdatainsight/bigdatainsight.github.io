@@ -1,0 +1,10 @@
+Title: My First Jupter Notebook Page
+Date: 2016-10-03 10:20
+Modified: 2016-10-05 19:30
+Category: Python
+Tags: pelican, publishing
+Slug: jupter_post_1
+Authors: Eric Yang
+Summary: This is a test page to try pelican support to Jupter notebook.
+
+This is the content of my super blog post.
