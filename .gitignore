@@ -91,3 +91,7 @@ ENV/
 
 # generated output directory
 output/
+
+# installed plugins & themes
+pelican-plugins/
+pelican-themes/
