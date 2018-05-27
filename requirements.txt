@@ -1,0 +1,10 @@
+pelican==3.7.1
+Markdown==2.6.11
+jupyter>=1.0.0
+ipython>=5.7.0
+nbconvert>=5.3.1
+beautifulsoup4>=4.6.0
+ghp-import==0.5.5
+matplotlib==2.2.2
+typogrify==2.0.7
+fabric==1.14.0
