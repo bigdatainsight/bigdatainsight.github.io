@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="english" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>How to Generate static blog with Python - Big Data Insight</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://bigdatainsight.github.io/how_to_generate_static_blog_with_python.html">
+
+        <meta name="author" content="me" />
+        <meta name="keywords" content="Pelican,Anaconda,Python,Markdown" />
+        <meta name="description" content="This is a demo page to show how Pelican support generating static pages Markdown." />
+
+        <meta property="og:site_name" content="Big Data Insight" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="How to Generate static blog with Python"/>
+        <meta property="og:url" content="http://bigdatainsight.github.io/how_to_generate_static_blog_with_python.html"/>
+        <meta property="og:description" content="This is a demo page to show how Pelican support generating static pages Markdown."/>
+        <meta property="article:published_time" content="2016-06-08" />
+            <meta property="article:section" content="Markdown" />
+            <meta property="article:tag" content="Pelican" />
+            <meta property="article:tag" content="Anaconda" />
+            <meta property="article:tag" content="Python" />
+            <meta property="article:tag" content="Markdown" />
+            <meta property="article:author" content="me" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://bigdatainsight.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://bigdatainsight.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://bigdatainsight.github.io/theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://bigdatainsight.github.io/theme/css/style.css" type="text/css"/>
+
+        <link href="http://bigdatainsight.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Big Data Insight ATOM Feed"/>
+
+
+
+        <link href="http://bigdatainsight.github.io/feeds/markdown.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Big Data Insight Markdown ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://bigdatainsight.github.io/" class="navbar-brand">
+Big Data Insight            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="http://bigdatainsight.github.io/pages/about-me.html">
+                             About Me
+                          </a></li>
+                        <li >
+                            <a href="http://bigdatainsight.github.io/category/jupyter.html">Jupyter</a>
+                        </li>
+                        <li class="active">
+                            <a href="http://bigdatainsight.github.io/category/markdown.html">Markdown</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://bigdatainsight.github.io/how_to_generate_static_blog_with_python.html"
+                       rel="bookmark"
+                       title="Permalink to How to Generate static blog with Python">
+                        How to Generate static blog with Python
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-06-08T20:00:00-04:00"> Wed 08 June 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://bigdatainsight.github.io/tag/pelican.html">Pelican</a>
+        /
+	<a href="http://bigdatainsight.github.io/tag/anaconda.html">Anaconda</a>
+        /
+	<a href="http://bigdatainsight.github.io/tag/python.html">Python</a>
+        /
+	<a href="http://bigdatainsight.github.io/tag/markdown.html">Markdown</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h1>Installing Pelican</h1>
+<ul>
+<li>Install miniconda3</li>
+<li>Create a virtual envrionment with python 2.7, called "pelican"</li>
+<li>Intall pelican and required modules</li>
+</ul>
+<div class="highlight"><pre><span></span>pip install -r requirements.txt
+</pre></div>
+
+
+<p>The content of requirementx.txt is like this:</p>
+<div class="highlight"><pre><span></span><span class="nv">pelican</span><span class="o">==</span><span class="m">3</span>.7.1
+<span class="nv">Markdown</span><span class="o">==</span><span class="m">2</span>.6.11
+jupyter&gt;<span class="o">=</span><span class="m">1</span>.0.0
+ipython&gt;<span class="o">=</span><span class="m">5</span>.7.0
+nbconvert&gt;<span class="o">=</span><span class="m">5</span>.3.1
+beautifulsoup4&gt;<span class="o">=</span><span class="m">4</span>.6.0
+ghp-import<span class="o">==</span><span class="m">0</span>.5.5
+<span class="nv">matplotlib</span><span class="o">==</span><span class="m">2</span>.2.2
+<span class="nv">typogrify</span><span class="o">==</span><span class="m">2</span>.0.7
+<span class="nv">fabric</span><span class="o">==</span><span class="m">1</span>.14.0
+</pre></div>
+
+
+<h1>Creating your data science blog</h1>
+<div class="highlight"><pre><span></span>mkdir bigdatainsight.github.io
+<span class="nb">cd</span> bigdatainsight.github.io
+pelican-quickstart
+</pre></div>
+
+
+<h1>Installing plugins</h1>
+<p>In the blog root folder, <code>bigdatainsight.github.io</code>, clone pelican plugins.</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/getpelican/pelican-plugins.git
+</pre></div>
+
+
+<h1>Install the Jupyter plugin</h1>
+<p>In the blog root folder, <code>bigdatainsight.github.io</code>, install ipynb plugin as git submodule.</p>
+<div class="highlight"><pre><span></span>git submodule add git://github.com/danielfrg/pelican-ipynb.git plugins/ipynb
+</pre></div>
+
+
+<p>modify <code>pelicanconf.py</code> and add these lines at the bottom:</p>
+<div class="highlight"><pre><span></span><span class="n">MARKUP</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;md&#39;</span><span class="p">,</span> <span class="s1">&#39;ipynb&#39;</span><span class="p">)</span>
+<span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;./plugins&#39;</span><span class="p">]</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ipynb.markup&#39;</span><span class="p">]</span>
+</pre></div>
+
+
+<h1>Writing your first post</h1>
+<ul>
+<li>Jupyter Notebook</li>
+<li>put a jutyter notebook file in the content directory</li>
+<li>create a meta file for the notebook
+    If the notebook file named <code>note1.ipynb</code>, then create a <code>note1.ipynb-meta</code> file.</li>
+</ul>
+<div class="highlight"><pre><span></span>Title: First Post
+Slug: first-post
+Date: 2016-06-08 20:00
+Category: posts
+Tags: python firsts
+Author: Vik Paruchuri
+Summary: My first post, read it to find out.
+</pre></div>
+
+
+<ul>
+<li>Markdown file</li>
+<li>Create a .md file in the content directory</li>
+</ul>
+<h1>Generating HTML</h1>
+<p>In order to generate HTML from our post, we'll need to run Pelican to convert the notebooks to HTML, then run a local server to be able to view them:</p>
+<ul>
+<li>Switch to the <code>bigdatainsight.github.io</code> folder.</li>
+<li>Run <code>pelican content</code> to generate the HTML.</li>
+<li>Switch to the <code>output</code> directory.</li>
+<li>Run <code>python -m pelican.server</code>.</li>
+<li>Visit <a href="localhost:8000">localhost:8000</a> in your browser to preview the blog.</li>
+</ul>
+<p>You have to repeat these commands again and again.</p>
+<div class="highlight"><pre><span></span>pelican content
+<span class="nb">cd</span> output
+python -m pelican.server
+<span class="nb">cd</span> ..
+</pre></div>
+
+
+<p>To make it easier, just use</p>
+<div class="highlight"><pre><span></span>fab reserve
+</pre></div>
+
+
+<p>This is equavalent to above four commands.</p>
+<h1>Deploy to GitHub Pages</h1>
+<ul>
+<li>Run <code>ghp-import output -b master</code> to import everything in the output folder to the master branch.</li>
+<li>Use <code>git push origin master</code> to push your content to GitHub.</li>
+</ul>
+<h1>Choose a Theme</h1>
+<p>The Pelican community offers a variety of themes at <a href="http://www.pelicanthemes.com/">pelicanthemes.com</a>.</p>
+<p><a href="http://ptd.pronoiac.org">PELICAN THEME DEMOS</a> has many screen shots for the themes.</p>
+<ul>
+<li>get pelican themes</li>
+</ul>
+<div class="highlight"><pre><span></span>git clone --recursive https://github.com/getpelican/pelican-themes pelican-themes
+</pre></div>
+
+
+<ul>
+<li>Create a THEME variable in your <code>pelicanconf.py</code> file and set its value to the location of the theme:</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">THEME</span> <span class="o">=</span> <span class="s1">&#39;C:</span><span class="se">\\</span><span class="s1">Pelican</span><span class="se">\\</span><span class="s1">pelican-themes</span><span class="se">\\</span><span class="s1">flex</span>
+</pre></div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="#"><i class="fa fa-you-can-add-links-in-your-config-file-square fa-lg"></i> You can add links in your config file</a></li>
+    <li class="list-group-item"><a href="#"><i class="fa fa-another-social-link-square fa-lg"></i> Another social link</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://getpelican.com/" target="_blank">Pelican</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://python.org/" target="_blank">Python.org</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a>
+    </li>
+    <li class="list-group-item">
+      <a href="#" target="_blank">You can modify those links in your config file</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 Eric Yang
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://bigdatainsight.github.io/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://bigdatainsight.github.io/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://bigdatainsight.github.io/theme/js/respond.min.js"></script>
+
+
+
+
+</body>
+</html>

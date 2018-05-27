@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Big Data Insight - Markdown</title><link href="http://bigdatainsight.github.io/" rel="alternate"></link><link href="http://bigdatainsight.github.io/feeds/markdown.atom.xml" rel="self"></link><id>http://bigdatainsight.github.io/</id><updated>2016-06-08T20:00:00-04:00</updated><entry><title>How to Generate static blog with Python</title><link href="http://bigdatainsight.github.io/how_to_generate_static_blog_with_python.html" rel="alternate"></link><published>2016-06-08T20:00:00-04:00</published><updated>2016-06-08T20:00:00-04:00</updated><author><name>me</name></author><id>tag:bigdatainsight.github.io,2016-06-08:/how_to_generate_static_blog_with_python.html</id><summary type="html">&lt;p&gt;This is a demo page to show how Pelican support generating static pages Markdown.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Installing Pelican&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Install miniconda3&lt;/li&gt;
+&lt;li&gt;Create a virtual envrionment with python 2.7, called "pelican"&lt;/li&gt;
+&lt;li&gt;Intall pelican and required modules&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install -r requirements.txt
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;The content of requirementx.txt is like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nv"&gt;pelican&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;.7.1
+&lt;span class="nv"&gt;Markdown&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.6.11
+jupyter&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0.0
+ipython&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;.7.0
+nbconvert&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;.3.1
+beautifulsoup4&amp;gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;.6.0
+ghp-import&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.5.5
+&lt;span class="nv"&gt;matplotlib&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.2.2
+&lt;span class="nv"&gt;typogrify&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;.0.7
+&lt;span class="nv"&gt;fabric&lt;/span&gt;&lt;span class="o"&gt;==&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.14.0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Creating your data science blog&lt;/h1&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir bigdatainsight.github.io
+&lt;span class="nb"&gt;cd&lt;/span&gt; bigdatainsight.github.io
+pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Installing plugins&lt;/h1&gt;
+&lt;p&gt;In the blog root folder, &lt;code&gt;bigdatainsight.github.io&lt;/code&gt;, clone pelican plugins.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/getpelican/pelican-plugins.git
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Install the Jupyter plugin&lt;/h1&gt;
+&lt;p&gt;In the blog root folder, &lt;code&gt;bigdatainsight.github.io&lt;/code&gt;, install ipynb plugin as git submodule.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git submodule add git://github.com/danielfrg/pelican-ipynb.git plugins/ipynb
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;modify &lt;code&gt;pelicanconf.py&lt;/code&gt; and add these lines at the bottom:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;MARKUP&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;md&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;ipynb&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;PLUGIN_PATHS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;./plugins&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ipynb.markup&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h1&gt;Writing your first post&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Jupyter Notebook&lt;/li&gt;
+&lt;li&gt;put a jutyter notebook file in the content directory&lt;/li&gt;
+&lt;li&gt;create a meta file for the notebook
+    If the notebook file named &lt;code&gt;note1.ipynb&lt;/code&gt;, then create a &lt;code&gt;note1.ipynb-meta&lt;/code&gt; file.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Title: First Post
+Slug: first-post
+Date: 2016-06-08 20:00
+Category: posts
+Tags: python firsts
+Author: Vik Paruchuri
+Summary: My first post, read it to find out.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Markdown file&lt;/li&gt;
+&lt;li&gt;Create a .md file in the content directory&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Generating HTML&lt;/h1&gt;
+&lt;p&gt;In order to generate HTML from our post, we'll need to run Pelican to convert the notebooks to HTML, then run a local server to be able to view them:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Switch to the &lt;code&gt;bigdatainsight.github.io&lt;/code&gt; folder.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;pelican content&lt;/code&gt; to generate the HTML.&lt;/li&gt;
+&lt;li&gt;Switch to the &lt;code&gt;output&lt;/code&gt; directory.&lt;/li&gt;
+&lt;li&gt;Run &lt;code&gt;python -m pelican.server&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Visit &lt;a href="localhost:8000"&gt;localhost:8000&lt;/a&gt; in your browser to preview the blog.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You have to repeat these commands again and again.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content
+&lt;span class="nb"&gt;cd&lt;/span&gt; output
+python -m pelican.server
+&lt;span class="nb"&gt;cd&lt;/span&gt; ..
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To make it easier, just use&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;fab reserve
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is equavalent to above four commands.&lt;/p&gt;
+&lt;h1&gt;Deploy to GitHub Pages&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Run &lt;code&gt;ghp-import output -b master&lt;/code&gt; to import everything in the output folder to the master branch.&lt;/li&gt;
+&lt;li&gt;Use &lt;code&gt;git push origin master&lt;/code&gt; to push your content to GitHub.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Choose a Theme&lt;/h1&gt;
+&lt;p&gt;The Pelican community offers a variety of themes at &lt;a href="http://www.pelicanthemes.com/"&gt;pelicanthemes.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://ptd.pronoiac.org"&gt;PELICAN THEME DEMOS&lt;/a&gt; has many screen shots for the themes.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;get pelican themes&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone --recursive https://github.com/getpelican/pelican-themes pelican-themes
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;Create a THEME variable in your &lt;code&gt;pelicanconf.py&lt;/code&gt; file and set its value to the location of the theme:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;THEME&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;C:&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s1"&gt;Pelican&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s1"&gt;pelican-themes&lt;/span&gt;&lt;span class="se"&gt;\\&lt;/span&gt;&lt;span class="s1"&gt;flex&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content><category term="Pelican"></category><category term="Anaconda"></category><category term="Python"></category><category term="Markdown"></category></entry></feed>
